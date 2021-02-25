@@ -1,0 +1,10 @@
+logs/*
+!.gitkeep
+.DS_Store
+.idea
+node_modules/
+bower_components/
+tmp
+dist/
+downloads/
+package-lock.json

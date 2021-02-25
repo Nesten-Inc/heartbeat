@@ -1,0 +1,56 @@
+#!/usr/bin/env node
+
+const debug = require("debug")("reporting:worker");
+const http  = require("http");
+const fs    = require('fs');
+
+var environment = process.env.NODE_ENV || 'development';
+if(environment == 'development'){
+    config = JSON.parse(fs.readFileSync('./config/defaults.json', 'utf-8'));
+}
+else{
+    config = JSON.parse(fs.readFileSync(`./config/${environment}.json`, 'utf-8'));
+}
+
+
+let Report = require("../server/lib/Reporter");
+
+let report;
+let interval = setInterval(() => {
+    console.log("Reporting Url",config.reporter.url);
+    if(config.router.isConfigured === true) {
+        report = new Report();
+        stopTimer();
+    } else {
+        if(environment == 'development'){
+            config = JSON.parse(fs.readFileSync('./config/defaults.json', 'utf-8'));
+        }
+        else{
+            config = JSON.parse(fs.readFileSync(`./config/${environment}.json`, 'utf-8'));
+        }
+        console.log("Router Config Check : ", config.router.isConfigured);
+        if(config.router.isConfigured === true) {
+            process.exit(2);
+        }
+    }
+}, 6000);
+
+function stopTimer() {
+    clearInterval(interval)
+}
+
+
+let stop = async function(msg) {
+    process.exit();
+};
+
+process.on("uncaughtException", function(err) {
+    debug(err.stack);
+    debug("uncaughtException", err);
+}).on("SIGINT", function() {
+    stop("Received SIGINT Ctrl+C signal.API service shutdown.");
+}).on("SIGTERM", function() {
+    stop("Received SIGTERM signal. API service shutdown.");
+}).on("exit", function() {
+    stop("API service shutdown.");
+});

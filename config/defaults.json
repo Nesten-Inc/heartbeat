@@ -1,0 +1,38 @@
+{
+    "router": {
+        "id":  "2710d03c-5ef8-4684-b3fd-bbbf33aa8e86",
+        "privKey": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "pubKey": "0xa8c6ad79f7cfc883325d4fe384fdb045b551d9f0",
+        "isConfigured": false
+    },
+    "reporter": {
+        "url": "XXXXXXXXXXXXXXXXXXXX",
+        "interval": "*/5 * * * *",
+        "daily": "53 6 * * *",
+        "address": "0x90f3bb2A314B9D69DD16f3A8Aaa28DD73dF335f8"
+    },
+    "host": "0.0.0.0",
+    "port": 4000,
+    "pg": {
+        "user": "",
+        "host": "",
+        "database": "",
+        "password": "",
+        "port": 3211
+    },
+    "wallet": {
+        "derivation": {
+            "btc": "m/44'/1'/0'/0",
+            "eth": "m/44'/60'/0'/0"
+        },
+        "mnemonic": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+    },
+    "web3": {
+        "owner": "0x4e59e21ef73f57000000000000000000003912aaf10cde",
+        "privatekey": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "url": "XXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "gasLimit": "210000",
+        "gasPrice": "10",
+        "chainId": 3
+    }
+}

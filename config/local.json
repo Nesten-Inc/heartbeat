@@ -1,0 +1,38 @@
+{
+    "router": {
+        "id":  "7f054555-dfeb-4830-af64-15752ade5c88",
+        "privKey": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "pubKey": "0x9963dd9564e3ea5a59b86a1254455a6986a0cb9b", 
+        "isConfigured": true
+    },
+    "reporter": {
+        "url": "http://localhost:4000",
+        "interval": "*/2 * * * *",
+        "daily": "26 15 * * *",
+        "address": "0xE4F032E829359dC5850E354F6A9520d0CfbBcE0B"
+    },
+    "host": "0.0.0.0",
+    "port": 4000,
+    "pg": {
+        "user": "",
+        "host": "",
+        "database": "",
+        "password": "",
+        "port": 3211
+    },
+    "wallet": {
+        "derivation": {
+            "btc": "m/44'/1'/0'/0",
+            "eth": "m/44'/60'/0'/0"
+        },
+        "mnemonic": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    },
+    "web3": {
+        "owner": "0x4e59e21ef73f57000000000000000000003912aaf10cde",
+        "privatekey": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "url": "http://localhost:8545",
+        "gasLimit": "210000",
+        "gasPrice": "10",
+        "chainId": 3
+    }
+}

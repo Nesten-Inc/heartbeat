@@ -1,0 +1,14 @@
+{
+    "apps": [
+        {
+            "name": "heartbeat",
+            "cwd": "/home/ubuntu/heartbeat/",
+            "script": "npm",
+            "args": "start",
+            "exec_mode":"fork",
+            "env": {
+                "NODE_ENV": "local"
+            }
+        }
+    ]
+}

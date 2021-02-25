@@ -1,0 +1,30 @@
+{
+    "apps": [
+        {
+            "name": "heartbeat",
+            "cwd": "/home/ubuntu/heartbeat/",
+            "script": "npm",
+            "args": "start",
+            "exec_mode":"fork",
+            "env": {
+                "NODE_ENV": "development"
+            }
+        },
+        {
+            "name": "bluetooth",
+            "cwd" : "/home/ubuntu/bluetooth",
+            "script": "startup.sh",
+            "exec_mode": "fork"
+        },
+        {
+            "name": "system_info",
+            "cwd" : "/home/ubuntu/gps_service",
+            "script": "npm",
+            "args": "start",
+            "exec_mode":"fork",
+            "env": {
+                "NODE_ENV": "development"
+            }
+        }
+    ]
+}
